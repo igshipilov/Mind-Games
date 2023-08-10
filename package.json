@@ -9,6 +9,7 @@
   },
   "bin": {
     "brain-games": "bin/brain-games.js",
+    "brain-even" : "bin/brain-even.js",
     "showmsg": "bin/showmsg.js",
     "test-npm": "bin/test.js"
   },
