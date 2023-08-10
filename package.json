@@ -9,8 +9,17 @@
   },
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "showmsg": "bin/showmsg.js"
+    "showmsg": "bin/showmsg.js",
+    "test-npm": "bin/test.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.0"
+  }
 }
