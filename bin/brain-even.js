@@ -44,29 +44,19 @@ Correct!
 
 */
 
-// import greetUser from '../src/cli.js';
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
-// greetUser();
 
 const getQuestion = () => {
   const digits = 100;
   const generateNum = Math.random() * digits;
   const result = Math.floor(generateNum);
   return result;
-  // console.log(`Question: ${result}`);
 };
 
-// getQuestion();
 
-const gameIsEven = () => {
-  // ПРОБА ПЕРА
-
-  // const question = getQuestion();
-  // console.log(`Question: ${question}`);
-  // const program = readlineSync.question(`Your answer: `);
-  // program;
+const startGame = () => {
+  console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -75,27 +65,21 @@ const gameIsEven = () => {
 
   for (let i = 0; i < 3; i += 1) {
     const question = getQuestion();
-    const isEven = question % 2 === 0;
+    const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+
     console.log(`Question: ${question}`);
     const userInput = readlineSync.question('Your answer: ');
-    const userAnswer = userInput === 'yes';
+    const userAnswer = userInput.toLowerCase();
 
-    if (userAnswer !== isEven) {
-      console.log(`${userInput} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+    if (userAnswer !== correctAnswer) {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       return;
     }
     console.log('Correct!');
 
-    // ПСЕВДОКОД
-
-    // userInput
-    // if (userInput !== getQuestion())
-    // {return console.log(`'yes' is wrong answer...`)}
-    // console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.
-    // Let's try again, Bill!`)
-  }
+  };
 
   console.log(`Congratulations, ${name}`);
 };
 
-gameIsEven();
+startGame();
