@@ -11,7 +11,6 @@
 - Ответы пользователя
 - Правильные ответы
 
-
 Как выглядит тело функции-движка?
 
 ## Часть greeting
@@ -20,7 +19,6 @@ Welcome!
 userName?
 Hello, userName!
 Rules
-
 
 ## Часть game-win
 
@@ -37,13 +35,11 @@ Your answer:
 Correct!
 Congratulations, userName!
 
-
 ## Часть game-lose
 
 (если юзер ошибся)
 `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 Let's try again, ${userName}!`
-
 
 Как выполнить Часть 2?
 
@@ -54,10 +50,8 @@ Let's try again, ${userName}!`
     return Часть game-lose;
   }
 
-
 Откуда берём correctAnswer?
 - Из доп. функции, уникальной в каждой игре
-
 
 ----------------------
 
@@ -69,7 +63,6 @@ const startGame = (rules, question, answer) => {...};
 есть функция const rules = () => {...}
 есть функция const question = () => {...}
 есть функция const answer = () => {...}
-
 
 Движок выполняет весь интерактив (пользователь вводит данные и т.д.)!!
 
@@ -85,6 +78,35 @@ const startGame = (rules, question, answer) => {...};
 
 import readlineSync from 'readline-sync';
 
+const gameLogic = (rules, task) => {
+  console.log('Welcome to the Brain Games!');
+
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+
+  console.log(rules);
+
+  for (let i = 0; i < 3; i += 1) {
+    const ask = task.askUser;
+    console.log(ask);
+
+    const userAnswer = readlineSync.question('Your answer: ');
+    const { correctAnswer } = task;
+    const correctAnswerString = correctAnswer.toString();
+
+    if (userAnswer !== correctAnswerString) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+Let's try again, ${userName}!`);
+      return;
+    }
+    console.log('Correct!');
+  }
+
+  console.log(`Congratulations, ${userName}`);
+};
+
+export { gameLogic };
+
 // const name = () => {
 //   const userName = readlineSync.question('May I have your name? ');
 //   return userName;
@@ -99,32 +121,3 @@ import readlineSync from 'readline-sync';
 // const congrats = () => {
 //   console.log(`Congratulations, ${name()}`);
 // };
-
-
-const gameLogic = (rules, question, correctAnswer) => {
-  console.log('Welcome to the Brain Games!');
-
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-
-  console.log(rules);
-  
-  for (let i = 0; i < 3; i += 1) {
-
-    console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (userAnswer !== correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${userName}!`);
-      return;
-    }
-    console.log('Correct!');
-
-  };
-
-  console.log(`Congratulations, ${userName}`);
-
-};
-
-export { gameLogic };

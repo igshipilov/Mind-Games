@@ -15,7 +15,6 @@ Let's try again, USERNAME!
 
 2. Завершить игру
 
-
 Если ответ совпал:
 1. вернуть: Correct!
 2. И перейти к следующему шагу.
@@ -28,14 +27,11 @@ Congratulations, USERNAME!
 import readlineSync from 'readline-sync';
 import { gameLogic } from '../src/index.js';
 
-
-
 const getRandNum = () => {
   const digits = 10;
   const generateNum = Math.random() * digits;
   return Math.floor(generateNum);
 };
-
 
 const operators = ['+', '-', '*'];
 
@@ -46,84 +42,28 @@ const getOperator = () => {
   return operators[result];
 };
 
-
 const rules = 'What is the result of the expression?';
 
-const question = () => {
+const getTask = () => {
   const num1 = getRandNum();
   const num2 = getRandNum();
-
   const operator = getOperator();
-  console.log(`Question: ${num1} ${operator} ${num2}`);
 
-  switch(operator) {
+  const question = `Question: ${num1} ${operator} ${num2}`;
+
+  switch (operator) {
     case '+':
-      return num1 + num2;
+      return { askUser: question, correctAnswer: num1 + num2 };
     case '-':
-      return num1 - num2;
+      return { askUser: question, correctAnswer: num1 - num2 };
     case '*':
-      return num1 * num2;
+      return { askUser: question, correctAnswer: num1 * num2 };
     default:
-      return;
   }
-
 };
 
+// const question = getTask();
+// const askUser = question.askUser;
+// const correctAnswer = question.correctAnswer;
 
-// const correctAnswer = () => {
-//   switch(operator) {
-//     case '+':
-//       return num1 + num2;
-//     case '-':
-//       return num1 - num2;
-//     case '*':
-//       return num1 * num2;
-//     default:
-//       return;
-//   }
-// };
-
-gameLogic(rules, question(), correctAnswer);
-
-const startGame = () => {
-  
-  for (let i = 0; i < 3; i += 1) {
-    
-    const num1 = getRandNum();
-    const num2 = getRandNum();
-
-    const operator = getOperator();
-
-    let result = 0;
-
-    console.log(`Question: ${num1} ${operator} ${num2}`);
-    const userInput = readlineSync.question('Your answer: ');
-    switch(operator) {
-      case '+':
-        result = num1 + num2;
-        break; 
-      case '-':
-        result = num1 - num2;
-        break;
-      case '*':
-        result = num1 * num2;
-        break;
-      default:
-        break;
-    }
-
-    if (+userInput !== result) {
-      console.log(`'${userInput}' is wrong answer ;(. Correct answer was '${result}'.Let's try again, ${name}!`);
-      return;
-    }
-    console.log('Correct!');
-
-  };
-
-  // console.log(`Congratulations, ${name}`);
-
-};
-
-startGame();
-
-
+gameLogic(rules, getTask());

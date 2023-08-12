@@ -15,7 +15,6 @@ Let's try again, USERNAME!
 
 2. Завершить игру
 
-
 Если ответ совпал:
 1. вернуть: Correct!
 2. И перейти к следующему шагу.
@@ -27,7 +26,6 @@ Congratulations, USERNAME!
 
 import readlineSync from 'readline-sync';
 
-
 const getRandNum = () => {
   const digits = 10;
   const generateNum = Math.random() * digits;
@@ -35,7 +33,6 @@ const getRandNum = () => {
 
   return num;
 };
-
 
 const operators = ['+', '-', '*'];
 
@@ -53,9 +50,8 @@ const startGame = () => {
   console.log(`Hello, ${name}!`);
 
   console.log('What is the result of the expression?');
-  
+
   for (let i = 0; i < 3; i += 1) {
-    
     const num1 = getRandNum();
     const num2 = getRandNum();
 
@@ -65,10 +61,10 @@ const startGame = () => {
 
     console.log(`Question: ${num1} ${operator} ${num2}`);
     const userInput = readlineSync.question('Your answer: ');
-    switch(operator) {
+    switch (operator) {
       case '+':
         result = num1 + num2;
-        break; 
+        break;
       case '-':
         result = num1 - num2;
         break;
@@ -84,13 +80,9 @@ const startGame = () => {
       return;
     }
     console.log('Correct!');
-
-  };
+  }
 
   console.log(`Congratulations, ${name}`);
-
 };
 
 startGame();
-
-
