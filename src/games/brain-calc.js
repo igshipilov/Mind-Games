@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /*
 
 Сгенерировать два разных числа
@@ -24,12 +22,12 @@ Congratulations, USERNAME!
 
 */
 
-import readlineSync from 'readline-sync';
-// import { startGame } from '../index.js';
-
-const rules = 'What is the result of the expression?';
+// import readlineSync from 'readline-sync';
+import { startGame } from '../index.js';
 
 // --- обслуживающие функции --- 
+const rules = 'What is the result of the expression?';
+
 const getRandNum = () => {
   const digits = 10;
   const generateNum = Math.random() * digits;
@@ -55,6 +53,7 @@ const getOperator = () => {
 
 // -----------------------------^
 
+
 // displays as 'Question: ' -> returns an expression, for e.g. 5 + 2
 const getTask = () => {
   const num1 = getRandNum();
@@ -79,97 +78,34 @@ const getCorrectAnswer = (calc) => {
 
 //  TEST ENGINE
 // =====================
-const startGame = (rules, getTask, getCorrectAnswer) => {
-  console.log('Welcome to the Brain Games!');
+// const startGame = (rules, getTask, getCorrectAnswer) => {
+//   console.log('Welcome to the Brain Games!');
 
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+//   const userName = readlineSync.question('May I have your name? ');
+//   console.log(`Hello, ${userName}!`);
 
-  console.log(rules);
+//   console.log(rules);
 
-  for (let i = 0; i < 3; i += 1) {
-    const question = getTask();
-    const correctAnswer = getCorrectAnswer(question);
-
-    console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (userAnswer !== correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-      Let's try again, ${userName}!`);
-      return;
-    }
-    console.log('Correct!');
-  }
-
-  console.log(`Congratulations, ${userName}`);
-};
-// =====================
-
-// startGame(rules, getTask, getCorrectAnswer);
-
-// // Возвращает результат операции: сравнивается с userAnswer
-// const getCorrectAnswer = (num1, num2, operator) => {
-//   // console.log(`Question: ${num1} ${operator} ${num2}`);
-
-//   switch (operator) {
-//     case '+':
-//       return num1 + num2;
-//     case '-':
-//       return num1 - num2;
-//     case '*':
-//       return num1 * num2;
-//     default:
-//   }
-// };
-
-
-
-
-// SWITCH ON BACK +++++++++++++++
-const playBrainCalc = startGame(rules, getTask, getCorrectAnswer);
-
-export { playBrainCalc };
-// ++++++++++++++++++++++++++++++
-
-
-
-
-// gameLogic(rules, question(), correctAnswer);
-
-// const startGame = () => {
 //   for (let i = 0; i < 3; i += 1) {
-//     const num1 = getRandNum();
-//     const num2 = getRandNum();
+//     const question = getTask();
+//     const correctAnswer = getCorrectAnswer(question);
 
-//     const operator = getOperator();
+//     console.log(`Question: ${question}`);
+//     const userAnswer = readlineSync.question('Your answer: ');
 
-//     let result = 0;
-
-//     console.log(`Question: ${num1} ${operator} ${num2}`);
-//     const userInput = readlineSync.question('Your answer: ');
-//     switch (operator) {
-//       case '+':
-//         result = num1 + num2;
-//         break;
-//       case '-':
-//         result = num1 - num2;
-//         break;
-//       case '*':
-//         result = num1 * num2;
-//         break;
-//       default:
-//         break;
-//     }
-
-//     if (+userInput !== result) {
-//       console.log(`'${userInput}' is wrong answer ;(. Correct answer was '${result}'.Let's try again, ${name}!`);
+//     if (userAnswer !== correctAnswer) {
+//       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+//       Let's try again, ${userName}!`);
 //       return;
 //     }
 //     console.log('Correct!');
 //   }
 
-//   // console.log(`Congratulations, ${name}`);
+//   console.log(`Congratulations, ${userName}`);
 // };
+// =====================
 
-// startGame();
+
+const playBrainCalc = startGame(rules, getTask, getCorrectAnswer);
+
+export { playBrainCalc };

@@ -42,9 +42,7 @@ Correct!
 
 */
 
-<<<<<<< HEAD
-=======
-import readlineSync from 'readline-sync';
+// import readlineSync from 'readline-sync';
 import { startGame } from '../index.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -90,8 +88,8 @@ const playBrainEven = startGame(rules, getTask, getCorrectAnswer);
 
 export { playBrainEven };
 
-// ====== TESTS `startGame()` FUNCTION BELOW =======
-
+//  TEST ENGINE
+// =====================
 // // const [question, answer] = [getTask(), checkResult()];
 // // console.log(question);
 // // console.log(answer);
@@ -123,4 +121,4 @@ export { playBrainEven };
 // };
 
 // startGame();
->>>>>>> 31f3e9b (add game brain-calc, fix brain-even, separate game logic)
+// =====================
