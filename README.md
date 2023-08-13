@@ -6,5 +6,6 @@
 ### Gameplay demos
 
 brain-even: https://asciinema.org/a/601651
-brain-calc: https://asciinema.org/a/AqHzlLrG7DJPtmAuHKbnlfYVL
-brain-gcd: https://asciinema.org/a/2A87SxCwjcfC13JWuP1EsYmrU
+brain-calc: https://asciinema.org/a/602189
+brain-gcd: https://asciinema.org/a/602302
+brain-progression: https://asciinema.org/a/602336

@@ -139,7 +139,7 @@ export { gameLogic };
 
 const maxRounds = 3;
 
-const startGame = (rules, getTask, getCorrectAnswer) => {
+const startGame = (rules, setGameData) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
@@ -148,8 +148,10 @@ const startGame = (rules, getTask, getCorrectAnswer) => {
   console.log(rules);
 
   for (let i = 0; i < maxRounds; i += 1) {
-    const question = getTask();
-    const correctAnswer = getCorrectAnswer(question);
+    // const question = getTask();
+    // const correctAnswer = getCorrectAnswer(question);
+    const [question, answer] = setGameData();
+    const correctAnswer = answer.toString();
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');

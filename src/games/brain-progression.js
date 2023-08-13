@@ -123,30 +123,14 @@ const getRandNum = (max = 10, min = 1) => {
 
 */
 
-// const progression = () => {
-//   let step = getRandNum(10);
-//   let seqBegin = getRandNum(100);
-//   let seqMaxLength = getRandNum(10, 5);
-//   const toHide = getRandNum(seqMaxLength - 1);
-  
-//   let sequence = [];
-//   let currentElement = seqBegin;
-
-//   while (sequence.length < seqMaxLength) {
-//     sequence.push(currentElement);
-//     currentElement += step;
-//   }
-//   const hidden = sequence[toHide];
-//   sequence[toHide] = '..';
-
-//   return {
-//     result: sequence.join(' '),
-//     hidden: hidden,
-//   };
-// };
+// ============== ВОЗМОЖНОЕ РЕШЕНИЕ ==============
+// Присвойте вопрос и ответ отдельным константам
+// и создайте на их основе пару с помощью конструктора cons.
+// https://habr.com/ru/companies/wirex/articles/419193/
 
 
-const getTask = () => {
+
+const setGameData = () => {
   let step = getRandNum(10);
   let seqBegin = getRandNum(100);
   let seqMaxLength = getRandNum(10, 5);
@@ -159,25 +143,65 @@ const getTask = () => {
     sequence.push(currentElement);
     currentElement += step;
   }
-  const hidden = sequence[toHide];
+  const answer = sequence[toHide];
   sequence[toHide] = '..';
+  const question = sequence.join(' ');
 
-  const output = {
-    result: sequence.join(' '),
-    hidden: hidden,
-  };
+  return [question, answer];
 
-  return output.result;
 };
 
-console.log(getTask());
 
-const getCorrectAnswer = (task = getTask) => {
-  console.log(task);  
-};
+// const progr = progression();
+// console.log(progr);
+
+// const [question, answer] = progr;
+// console.log(question);
+// console.log(answer);
+
+
+
+// const getTask = () => {
+//   return progression().join(' ');
+// };
+// const question = getTask();
+
+// console.log(question);
+// console.log(question.length);
+
+// const getCorrectAnswer = () => {
+//   const array = question.split(' ');
+//   const empty = '..';
+
+//   let step = 0;
+//   let result = 0;
+
+//   let first = 0;
+//   let second = 1;
+
+//   // Перебираем массив
+//   // Как только текущий элемент массива === '..'
+//   // находим ближайшие два подряд идущих элемента
+//   //  и вычитаем: элемент2 - элемент1
+//   //  но для этого проверяем, не является ли элемент '..'
+//   //  первым, вторым, предпоследним или последним
+
+//   while (result === 0) {
+//     if (array[first] && array[second] !== empty) {
+//       step = array[second] - array[first];
+//     } else {
+//       first += 2;
+//       second += 2;
+//     }
+//   }
+
+
+//   return result;
+// };
 
 // console.log(getCorrectAnswer());
-getCorrectAnswer();
+// // console.log(getCorrectAnswer()[1] === '..');
 
-// const playBrainProgression = startGame(rules, getTask, getCorrectAnswer);
-// export { playBrainProgression };
+
+const playBrainProgression = startGame(rules, setGameData);
+export { playBrainProgression };

@@ -43,51 +43,44 @@ Correct!
 */
 
 // import readlineSync from 'readline-sync';
+import { question } from 'readline-sync';
 import { startGame } from '../index.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-// Выведется на экран как Question: генерирует и возвращает число: 
->>>>>>> 31f3e9b (add game brain-calc, fix brain-even, separate game logic)
-const getTask = () => {
+// // Выведется на экран как Question: генерирует и возвращает число: 
+// const getTask = () => {
+//   const digits = 100;
+//   const generateNum = Math.random() * digits;
+//   const result = Math.floor(generateNum);
+
+//   return result;
+// };
+
+// // Возвращает 'yes' если полученное число чётное, 'no' если нечётное:
+// // сравнивается с userAnswer
+// const getCorrectAnswer = (task) => {
+//   const result = task % 2 === 0 ? 'yes' : 'no';
+
+//   return result;
+// };
+
+
+
+const setGameData = () => {
+
   const digits = 100;
   const generateNum = Math.random() * digits;
-  const result = Math.floor(generateNum);
-<<<<<<< HEAD
-  return result;
+  
+  const question = Math.floor(generateNum);
+  const answer = question % 2 === 0 ? 'yes' : 'no';
+
+  return [question, answer];
 };
 
-export default (userAnswer) => {
-  for (let i = 0; i < 3; i += 1) {
-    const question = getTask();
-
-    const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
-
-    if (userAnswer === correctAnswer) {
-      return true;
-    }
-    return false;
-  }
-};
-
-// export default checkResult;
-=======
-
-  return result;
-};
-
-// Возвращает 'yes' если полученное число чётное, 'no' если нечётное:
-// сравнивается с userAnswer
-const getCorrectAnswer = (task) => {
-  const result = task % 2 === 0 ? 'yes' : 'no';
-
-  return result;
-};
-
-const playBrainEven = startGame(rules, getTask, getCorrectAnswer);
+const playBrainEven = startGame(rules, setGameData);
 
 export { playBrainEven };
-
 //  TEST ENGINE
 // =====================
 // // const [question, answer] = [getTask(), checkResult()];

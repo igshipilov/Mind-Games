@@ -33,34 +33,67 @@ const getRandNum = () => {
 
 // -----------------------------^
 
-const getTask = () => {
+// const getTask = () => {
+//   const num1 = getRandNum();
+//   const num2 = getRandNum();
+
+//   return `${num1} ${num2}`
+// };
+
+// // const task = getTask()
+// // console.log(task);
+// // console.log(task.split(' '));
+// // console.log(typeof task.split(' ')[0]);
+
+// const getCorrectAnswer = (task) => {
+//   const [num1, num2] = task.split(' ');
+//   let first = Number(num1);
+//   let second = Number(num2);
+
+//   if (first === 0 && second === 0) {
+//     return 0;
+//   }  if (first === 0 && second !== 0) {
+//     return second;
+//   }
+//   if (first !== 0 && second === 0) {
+//     return first;
+//   }
+//   if (first % second === 0){
+//     return second;
+//   }
+
+
+//   let reminder = first % second;
+
+//   while (reminder > 0) {
+//     first = second;
+//     second = reminder;
+//     reminder = first % second;
+//   }
+
+//   return second.toString();
+// };
+
+const setGameData = () => {
   const num1 = getRandNum();
   const num2 = getRandNum();
 
-  return `${num1} ${num2}`
-};
+  const question =`${num1} ${num2}`;
 
-// const task = getTask()
-// console.log(task);
-// console.log(task.split(' '));
-// console.log(typeof task.split(' ')[0]);
-
-const getCorrectAnswer = (task) => {
-  const [num1, num2] = task.split(' ');
   let first = Number(num1);
   let second = Number(num2);
 
-  if (first === 0 && second === 0) {
-    return 0;
-  }  if (first === 0 && second !== 0) {
-    return second;
-  }
-  if (first !== 0 && second === 0) {
-    return first;
-  }
-  if (first % second === 0){
-    return second;
-  }
+  // if (first === 0 && second === 0) {
+  //   return 0;
+  // }  if (first === 0 && second !== 0) {
+  //   return second;
+  // }
+  // if (first !== 0 && second === 0) {
+  //   return first;
+  // }
+  // if (first % second === 0){
+  //   return second;
+  // }
 
 
   let reminder = first % second;
@@ -71,11 +104,14 @@ const getCorrectAnswer = (task) => {
     reminder = first % second;
   }
 
-  return second.toString();
+  const answer = second.toString();
+
+  return [question, answer];
+
 };
 
 // console.log(getCorrectAnswer(task));
 
-const playBrainGCD = startGame(rules, getTask, getCorrectAnswer);
+const playBrainGCD = startGame(rules, setGameData);
 
 export { playBrainGCD };

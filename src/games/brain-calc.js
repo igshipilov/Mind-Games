@@ -54,25 +54,41 @@ const getOperator = () => {
 
 const rules = 'What is the result of the expression?';
 
-// displays as 'Question: ' -> returns an expression, for e.g. 5 + 2
-const getTask = () => {
+// // displays as 'Question: ' -> returns an expression, for e.g. 5 + 2
+// const getTask = () => {
+//   const num1 = getRandNum();
+//   const num2 = getRandNum();
+//   const operator = getOperator();
+
+//   return `${num1} ${operator} ${num2}`;
+// };
+
+
+// // in ENGINE (index.js) this func receives getTask() func as argument,
+// // calculates it and than this func's result compares with 'userAnswer'
+// const getCorrectAnswer = (task) => {
+
+//   const [num1, operator, num2] = task.split(' ');
+//   const result = expressions[operator](Number(num1), Number(num2));
+
+//   return result.toString();
+// };
+
+
+const setGameData = () => {
   const num1 = getRandNum();
   const num2 = getRandNum();
   const operator = getOperator();
 
-  return `${num1} ${operator} ${num2}`;
-};
+  const question = `${num1} ${operator} ${num2}`; 
 
-
-// in ENGINE (index.js) this func receives getTask() func as argument,
-// calculates it and than this func's result compares with 'userAnswer'
-const getCorrectAnswer = (task) => {
-
-  const [num1, operator, num2] = task.split(' ');
   const result = expressions[operator](Number(num1), Number(num2));
+  const answer = result.toString();
 
-  return result.toString();
+  return [question, answer];
+
 };
+
 
 
 
@@ -106,6 +122,6 @@ const getCorrectAnswer = (task) => {
 // =====================
 
 
-const playBrainCalc = startGame(rules, getTask, getCorrectAnswer);
+const playBrainCalc = startGame(rules, setGameData);
 
 export { playBrainCalc };
