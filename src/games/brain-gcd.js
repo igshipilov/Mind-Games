@@ -1,7 +1,6 @@
 import { startGame } from "../index.js";
 
 // --- обслуживающие функции ---
-const rules = 'Find the greatest common divisor of given numbers.';
 
 const getRandNum = () => {
   const digits = 100;
@@ -9,6 +8,10 @@ const getRandNum = () => {
 
   return Math.floor(generateNum);
 };
+
+// -----------------------------^
+
+const rules = 'Find the greatest common divisor of given numbers.';
 
 
 // ----- TESTS ----------------------
@@ -31,7 +34,6 @@ const getRandNum = () => {
 // console.log(`Q: ${integer}`);
 // ----------------------------------
 
-// -----------------------------^
 
 // const getTask = () => {
 //   const num1 = getRandNum();

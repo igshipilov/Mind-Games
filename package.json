@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/igshipilov/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/igshipilov/frontend-project-44/actions)",
   "main": "index.js",
@@ -13,6 +13,7 @@
     "brain-calc": "bin/brain-calc.js",
     "brain-gcd": "bin/brain-gcd.js",
     "brain-progression": "bin/brain-progression.js",
+    "brain-prime":"bin/brain-prime.js",
     "index": "src/index.js",
     "test-npm": "bin/test.js"
   },
