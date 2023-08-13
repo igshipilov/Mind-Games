@@ -45,8 +45,8 @@ const getTask = () => {
 // console.log(task.split(' '));
 // console.log(typeof task.split(' ')[0]);
 
-const getCorrectAnswer = (calc) => {
-  const [num1, num2] = calc.split(' ');
+const getCorrectAnswer = (task) => {
+  const [num1, num2] = task.split(' ');
   let first = Number(num1);
   let second = Number(num2);
 

@@ -26,8 +26,6 @@ Congratulations, USERNAME!
 import { startGame } from '../index.js';
 
 // --- обслуживающие функции --- 
-const rules = 'What is the result of the expression?';
-
 const getRandNum = () => {
   const digits = 10;
   const generateNum = Math.random() * digits;
@@ -54,6 +52,8 @@ const getOperator = () => {
 // -----------------------------^
 
 
+const rules = 'What is the result of the expression?';
+
 // displays as 'Question: ' -> returns an expression, for e.g. 5 + 2
 const getTask = () => {
   const num1 = getRandNum();
@@ -66,9 +66,9 @@ const getTask = () => {
 
 // in ENGINE (index.js) this func receives getTask() func as argument,
 // calculates it and than this func's result compares with 'userAnswer'
-const getCorrectAnswer = (calc) => {
+const getCorrectAnswer = (task) => {
 
-  const [num1, operator, num2] = calc.split(' ');
+  const [num1, operator, num2] = task.split(' ');
   const result = expressions[operator](Number(num1), Number(num2));
 
   return result.toString();

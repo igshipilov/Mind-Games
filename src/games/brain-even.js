@@ -78,8 +78,8 @@ export default (userAnswer) => {
 
 // Возвращает 'yes' если полученное число чётное, 'no' если нечётное:
 // сравнивается с userAnswer
-const getCorrectAnswer = (num) => {
-  const result = num % 2 === 0 ? 'yes' : 'no';
+const getCorrectAnswer = (task) => {
+  const result = task % 2 === 0 ? 'yes' : 'no';
 
   return result;
 };
