@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+<<<<<<< HEAD
 /*
 
 Сгенерировать два разных числа
@@ -67,3 +68,8 @@ const getTask = () => {
 // const correctAnswer = question.correctAnswer;
 
 gameLogic(rules, getTask());
+=======
+import { playBrainCalc } from "../src/games/brain-calc.js";
+
+playBrainCalc;
+>>>>>>> 31f3e9b (add game brain-calc, fix brain-even, separate game logic)
