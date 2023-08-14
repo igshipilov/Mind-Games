@@ -1,12 +1,10 @@
-import { startGame } from "../index.js";
-
 // --- обслуживающие функции ---
 
-const getRandNum = () => {
+const genRandNum = () => {
   const digits = 10;
-  const generateNum = Math.random() * digits;
+  const randNum = Math.random() * digits;
 
-  return Math.floor(generateNum);
+  return Math.floor(randNum);
 };
 
 const isPrime = (num) => {
@@ -18,30 +16,24 @@ const isPrime = (num) => {
   }
 
   const stop = num / 2;
-  
+
   for (let i = 2; i <= stop; i += 1) {
     if (num % i === 0) {
       return 'no';
     }
-  };
+  }
   return 'yes';
 };
-
-// console.log(isPrime(6));
 
 // -----------------------------^
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const setGameData = () => {
-  const question = getRandNum();
+const setQuestionAnswer = () => {
+  const question = genRandNum();
   const answer = isPrime(question);
 
   return [question, answer];
 };
 
-// console.log(setGameData());
-
-const playBrainPrime = startGame(rules, setGameData);
-
-export { playBrainPrime };
+export { rules, setQuestionAnswer };

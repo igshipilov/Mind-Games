@@ -22,17 +22,13 @@ Congratulations, USERNAME!
 
 */
 
-// import readlineSync from 'readline-sync';
-import { startGame } from '../index.js';
-
-// --- обслуживающие функции --- 
-const getRandNum = () => {
+// --- обслуживающие функции ---
+const genRandNum = () => {
   const digits = 10;
-  const generateNum = Math.random() * digits;
+  const randNum = Math.random() * digits;
 
-  return Math.floor(generateNum);
+  return Math.floor(randNum);
 };
-
 
 const operators = ['+', '-', '*'];
 
@@ -43,7 +39,9 @@ const expressions = {
 };
 
 const getOperator = () => {
-  const rand = (Math.random() * 3);
+  const operatorsQuantity = Object.keys(expressions).length;
+
+  const rand = (Math.random() * operatorsQuantity);
   const result = Math.floor(rand);
 
   return operators[result];
@@ -51,18 +49,35 @@ const getOperator = () => {
 
 // -----------------------------^
 
-
 const rules = 'What is the result of the expression?';
 
+const setQuestionAnswer = () => {
+  const num1 = genRandNum();
+  const num2 = genRandNum();
+  const operator = getOperator();
+
+  const question = `${num1} ${operator} ${num2}`;
+
+  const result = expressions[operator](Number(num1), Number(num2));
+  const answer = result.toString();
+
+  return [question, answer];
+};
+
+export { rules, setQuestionAnswer };
+
+
+
+
+// ============ OLD 'TWO-FUNC' SOLUTION ===============
 // // displays as 'Question: ' -> returns an expression, for e.g. 5 + 2
 // const getTask = () => {
-//   const num1 = getRandNum();
-//   const num2 = getRandNum();
+//   const num1 = genRandNum();
+//   const num2 = genRandNum();
 //   const operator = getOperator();
 
 //   return `${num1} ${operator} ${num2}`;
 // };
-
 
 // // in ENGINE (index.js) this func receives getTask() func as argument,
 // // calculates it and than this func's result compares with 'userAnswer'
@@ -73,55 +88,4 @@ const rules = 'What is the result of the expression?';
 
 //   return result.toString();
 // };
-
-
-const setGameData = () => {
-  const num1 = getRandNum();
-  const num2 = getRandNum();
-  const operator = getOperator();
-
-  const question = `${num1} ${operator} ${num2}`; 
-
-  const result = expressions[operator](Number(num1), Number(num2));
-  const answer = result.toString();
-
-  return [question, answer];
-
-};
-
-
-
-
-//  TEST ENGINE
-// =====================
-// const startGame = (rules, getTask, getCorrectAnswer) => {
-//   console.log('Welcome to the Brain Games!');
-
-//   const userName = readlineSync.question('May I have your name? ');
-//   console.log(`Hello, ${userName}!`);
-
-//   console.log(rules);
-
-//   for (let i = 0; i < 3; i += 1) {
-//     const question = getTask();
-//     const correctAnswer = getCorrectAnswer(question);
-
-//     console.log(`Question: ${question}`);
-//     const userAnswer = readlineSync.question('Your answer: ');
-
-//     if (userAnswer !== correctAnswer) {
-//       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-//       Let's try again, ${userName}!`);
-//       return;
-//     }
-//     console.log('Correct!');
-//   }
-
-//   console.log(`Congratulations, ${userName}`);
-// };
-// =====================
-
-
-const playBrainCalc = startGame(rules, setGameData);
-
-export { playBrainCalc };
+// =====================================================

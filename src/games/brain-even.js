@@ -20,6 +20,7 @@ Correct!
 
 И переходим к следующему шагу.
 
+
 # Логика
 
 Вывести на экран приветствие
@@ -42,17 +43,29 @@ Correct!
 
 */
 
-// import readlineSync from 'readline-sync';
-import { question } from 'readline-sync';
-import { startGame } from '../index.js';
-
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-// // Выведется на экран как Question: генерирует и возвращает число: 
+const correctAnswer = number => number % 2 === 0;
+
+const setQuestionAnswer = () => {
+  const digits = 100;
+  const randNum = Math.random() * digits;
+
+  const question = Math.floor(randNum);
+  const answer = correctAnswer(question) ? 'yes' : 'no';
+
+  return [question, answer];
+};
+
+export { rules, setQuestionAnswer };
+
+// ============ OLD 'TWO-FUNC' SOLUTION ===============
+
+// // Выведется на экран как Question: генерирует и возвращает число:
 // const getTask = () => {
 //   const digits = 100;
-//   const generateNum = Math.random() * digits;
-//   const result = Math.floor(generateNum);
+//   const randNum = Math.random() * digits;
+//   const result = Math.floor(randNum);
 
 //   return result;
 // };
@@ -65,53 +78,4 @@ const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 //   return result;
 // };
 
-
-
-const setGameData = () => {
-
-  const digits = 100;
-  const generateNum = Math.random() * digits;
-  
-  const question = Math.floor(generateNum);
-  const answer = question % 2 === 0 ? 'yes' : 'no';
-
-  return [question, answer];
-};
-
-const playBrainEven = startGame(rules, setGameData);
-
-export { playBrainEven };
-//  TEST ENGINE
-// =====================
-// // const [question, answer] = [getTask(), checkResult()];
-// // console.log(question);
-// // console.log(answer);
-
-// const startGame = () => {
-//   console.log('Welcome to the Brain Games!');
-
-//   const userName = readlineSync.question('May I have your name? ');
-//   console.log(`Hello, ${userName}!`);
-
-//   console.log(rules);
-
-//   for (let i = 0; i < 3; i += 1) {
-//     const question = getTask();
-//     const correctAnswer = getCorrectAnswer(question);
-
-//     console.log(`Question: ${question}`);
-//     const userAnswer = readlineSync.question('Your answer: ');
-
-//     if (userAnswer !== correctAnswer) {
-//       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-//       Let's try again, ${userName}!`);
-//       return;
-//     }
-//     console.log('Correct!');
-//   }
-
-//   console.log(`Congratulations, ${userName}`);
-// };
-
-// startGame();
-// =====================
+// =====================================================

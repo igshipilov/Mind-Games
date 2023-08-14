@@ -77,69 +77,10 @@ const startGame = (rules, question, answer) => {...};
 */
 
 import readlineSync from 'readline-sync';
-// import { rules, getTask, getCorrectAnswer } from '../bin/brain-even.js';
-// import { rules, getTask, getCorrectAnswer } from '../bin/brain-calc.js';
-
-<<<<<<< HEAD
-const gameLogic = (rules, task) => {
-  console.log('Welcome to the Brain Games!');
-
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-
-  console.log(rules);
-
-  for (let i = 0; i < 3; i += 1) {
-    const ask = task.askUser;
-    console.log(ask);
-
-    const userAnswer = readlineSync.question('Your answer: ');
-    const { correctAnswer } = task;
-    const correctAnswerString = correctAnswer.toString();
-
-    if (userAnswer !== correctAnswerString) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${userName}!`);
-      return;
-    }
-    console.log('Correct!');
-  }
-
-  console.log(`Congratulations, ${userName}`);
-};
-
-export { gameLogic };
-
-// const name = () => {
-//   const userName = readlineSync.question('May I have your name? ');
-//   return userName;
-// };
-=======
-// const task = getTask();
-// console.log(task);
-// console.log(getCorrectAnswer(task));
->>>>>>> 31f3e9b (add game brain-calc, fix brain-even, separate game logic)
-
-// const [task, correctAnswer] = [getTask(), getCorrectAnswer()];
-// const brainEven = [getTask(), getCorrectAnswer(num)];
-
-<<<<<<< HEAD
-// };
-
-// const congrats = () => {
-//   console.log(`Congratulations, ${name()}`);
-// };
-=======
-// const num = brainEven[0];
-// console.log(brainEven);
-
-
-// console.log(question);
-// console.log(answer);
 
 const maxRounds = 3;
 
-const startGame = (rules, setGameData) => {
+const startGame = (rules, setQuestionAnswer) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
@@ -148,9 +89,8 @@ const startGame = (rules, setGameData) => {
   console.log(rules);
 
   for (let i = 0; i < maxRounds; i += 1) {
-    // const question = getTask();
-    // const correctAnswer = getCorrectAnswer(question);
-    const [question, answer] = setGameData();
+
+    const [question, answer] = setQuestionAnswer();
     const correctAnswer = answer.toString();
 
     console.log(`Question: ${question}`);
@@ -167,5 +107,4 @@ const startGame = (rules, setGameData) => {
   console.log(`Congratulations, ${userName}`);
 };
 
-export { startGame };
->>>>>>> 31f3e9b (add game brain-calc, fix brain-even, separate game logic)
+export default startGame;

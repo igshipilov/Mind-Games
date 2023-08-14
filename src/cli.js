@@ -1,4 +1,3 @@
-// var readlineSync = require('readline-sync');
 import readlineSync from 'readline-sync';
 
 const greetUser = () => {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-// строка с шебанг (#!) означает: "выполнить файл как команду node.js,
-// используя env для получения пути к файлу интерпретатора.
+// line with shebang (#!) means: "execute file as node.js command,
+// using env to get the path to the interpreter file".
 
 import greetUser from '../src/cli.js';
 
