@@ -20,7 +20,6 @@ Correct!
 
 And we move on to the next step.
 
-
 # LOGIC
 
 Display welcome screen
@@ -45,7 +44,7 @@ Display the corresponding reaction on the screen (see above)
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const correctAnswer = number => number % 2 === 0;
+const correctAnswer = (number) => number % 2 === 0;
 
 const setQuestionAnswer = () => {
   const digits = 100;

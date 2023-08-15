@@ -14,7 +14,6 @@ Question: 14 19 24 29 34 39 44 49 54 ..
 Your answer: 59
 Correct!
 
-
 # LOGIC
 
 step = random single digit
@@ -32,7 +31,6 @@ When sequence.length = seqMaxLength:
    sequence[toHide] = '..';
    return sequence.join(' ');
 
-
 # IN SHORT
 
 `getTask()` should return a string like:
@@ -40,7 +38,6 @@ When sequence.length = seqMaxLength:
 
 `getCorrectAnswer()` should return the number
 which in this line is replaced by '..'
-
 
 */
 

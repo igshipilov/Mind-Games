@@ -11,7 +11,6 @@ const genRandNum = () => {
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
-
 const setQuestionAnswer = () => {
   const num1 = genRandNum();
   const num2 = genRandNum();
@@ -22,15 +21,15 @@ const setQuestionAnswer = () => {
   let second = Number(num2);
 
   if (first === 0 && second === 0) {
-  return [question, 0];
-  }  if (first === 0 && second !== 0) {
-  return [question, second];
+    return [question, 0];
+  } if (first === 0 && second !== 0) {
+    return [question, second];
   }
   if (first !== 0 && second === 0) {
-  return [question, first];
+    return [question, first];
   }
-  if (first % second === 0){
-  return [question, second];
+  if (first % second === 0) {
+    return [question, second];
   }
 
   let reminder = first % second;
@@ -48,15 +47,12 @@ const setQuestionAnswer = () => {
 
 export { rules, setQuestionAnswer };
 
-
-
 // ----- TESTS ----------------------
 // console.log(getCorrectAnswer(1680, 640)); // 80
 // console.log(getCorrectAnswer(25, 50)); // 25
 // console.log(getCorrectAnswer(100, 52)); // 4
 // console.log(getCorrectAnswer(3, 9)); // 3
 // ----------------------------------
-
 
 // ----- find GCD one step ---------
 // const a = 1680;
@@ -69,7 +65,6 @@ export { rules, setQuestionAnswer };
 // console.log(`R: ${reminder}`);
 // console.log(`Q: ${integer}`);
 // ----------------------------------
-
 
 // ============ OLD 'TWO-FUNC' SOLUTION ===============
 

@@ -67,9 +67,6 @@ const setQuestionAnswer = () => {
 
 export { rules, setQuestionAnswer };
 
-
-
-
 // ============ OLD 'TWO-FUNC' SOLUTION ===============
 // // displays as 'Question: ' -> returns an expression, for e.g. 5 + 2
 // const getTask = () => {

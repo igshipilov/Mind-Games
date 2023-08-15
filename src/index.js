@@ -89,7 +89,6 @@ const startGame = (rules, setQuestionAnswer) => {
   console.log(rules);
 
   for (let i = 0; i < maxRounds; i += 1) {
-
     const [question, answer] = setQuestionAnswer();
     const correctAnswer = answer.toString();
 
