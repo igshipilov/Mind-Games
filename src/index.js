@@ -104,7 +104,7 @@ const startGame = (rules, setQuestionAnswer) => {
     console.log('Correct!');
   }
 
-  console.log(`Congratulations, ${userName}`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default startGame;
