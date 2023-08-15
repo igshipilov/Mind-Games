@@ -15,36 +15,37 @@ Your answer: 59
 Correct!
 
 
-# ЛОГИКА
+# LOGIC
 
-step = случайное однозначное число
-seqBegin = случайное число (давай не более двухзначного)
-seqMaxLength = случайное число от 5 до 10
-sequence = массив с числами
-toHide = случайное число от 0 до `seqMaxLength - 1`
+step = random single digit
+seqBegin = random number (let's not exceed two digits)
+seqMaxLength = random number between 5 and 10
+sequence = array with numbers
+toHide = random number from 0 to `seqMaxLength - 1`
 
-Начинаем с seqBegin
-Делаем шаг (step), пока sequence.length < seqMaxLength:
-  sequence.push(seqBegin);
-  seqBegin = seqBegin + step;
+Starting with seqBegin
+Stepping while sequence.length < seqMaxLength:
+   sequence.push(seqBegin);
+   seqBegin = seqBegin + step;
 
-Когда sequence.length = seqMaxLength:
-  sequence[toHide] = '..';
-  return sequence.join(' ');
+When sequence.length = seqMaxLength:
+   sequence[toHide] = '..';
+   return sequence.join(' ');
 
 
-# ВКРАТЦЕ
+# IN SHORT
 
-`getTask()` должна возвращать строку вида:
+`getTask()` should return a string like:
 5 7 9 11 13 .. 17 19 21 23
 
-`getCorrectAnswer()` должна возвращать число,
-которое в этой строке заменилось на '..'
+`getCorrectAnswer()` should return the number
+which in this line is replaced by '..'
 
 
 */
 
-// --- обслуживающие функции ---
+// -------- calculations --------
+
 const rules = 'What is the result of the expression?';
 
 const genRandNum = (max = 10, min = 1) => {

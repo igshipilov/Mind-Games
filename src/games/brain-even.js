@@ -1,45 +1,45 @@
 /*
 
-# Задача
+# TASK
 
-Генерируем число и выводим в консоль в формате:
+We generate a number and output it to the console in the format:
 Question: 15
 
-Пользователь отвечает "yes" или "no", на экран это выводится в формате:
+The user answers "yes" or "no", this is displayed on the screen in the format:
 Your answer: yes
 
-Если пользователь ошибся, на экран выводится:
+If the user makes a mistake, the screen displays:
 'yes' is wrong answer ;(. Correct answer was 'no'.
 Let's try again, Bill!
 
-И игра завершается.
-Ошибкой считается любой некорректный ввод.
+And the game ends.
+Any incorrect input is considered an error.
 
-Если пользователь ответил правильно, на экран выводится:
+If the user answered correctly, the screen displays:
 Correct!
 
-И переходим к следующему шагу.
+And we move on to the next step.
 
 
-# Логика
+# LOGIC
 
-Вывести на экран приветствие
+Display welcome screen
 
-Вывести на экран вопрос
+Display a question
 
-Вычислить, является ли сгенерированное число чётным – isEven
-    true если чётное
-    false если нечётное
+Calculate if generated number is even - isEven
+     true if even
+     false if odd
 
-Ждать ввод от пользователя
-Считать ответ (STDIN?) – userAnswer
-    вернуть true если получено 'yes'
-    вернуть false если получено 'no'
+Wait for user input
+Read answer (STDIN?) – userAnswer
+     return true if received 'yes'
+     return false if received 'no'
 
-Сравнить ответ/ввод пользователя с правильным ответом
-    если userAnswer === isEven
+Compare user's answer/input with correct answer
+     if userAnswer === isEven
 
-Вывести на экран соответствующую реакцию (см. выше)
+Display the corresponding reaction on the screen (see above)
 
 */
 

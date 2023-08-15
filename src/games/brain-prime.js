@@ -1,4 +1,4 @@
-// --- обслуживающие функции ---
+// -------- calculations --------
 
 const genRandNum = () => {
   const digits = 10;

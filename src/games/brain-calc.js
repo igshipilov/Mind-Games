@@ -1,28 +1,29 @@
 /*
 
-Сгенерировать два разных числа
-Выполнить операцию + или - или *
-Запомнить результат
-Вывести в консоль эти же числа с этой же операцией
-Принять от пользователя ответ
+Generate two different numbers
+Perform operation + or - or *
+Remember result
+Print the same numbers to the console with the same operation
+Accept response from user
 
-Если ответ не совпал:
+If the answer doesn't match:
 
-1. вернуть: 'USER_REPLY' is wrong answer ;(. Correct answer was 'CORRECT_ANSWER'.
+1. return: 'USER_REPLY' is wrong answer ;(. Correct answer was 'CORRECT_ANSWER'.
 Let's try again, USERNAME!
 
-2. Завершить игру
+2. Finish the game
 
-Если ответ совпал:
-1. вернуть: Correct!
-2. И перейти к следующему шагу.
+If the answer matches:
+1. return: Correct!
+2. And go to the next step.
 
-После третьего успешного раунда вывести:
+After the third successful round, output:
 Congratulations, USERNAME!
 
 */
 
-// --- обслуживающие функции ---
+// -------- calculations --------
+
 const genRandNum = () => {
   const digits = 10;
   const randNum = Math.random() * digits;
