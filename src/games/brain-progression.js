@@ -46,7 +46,7 @@ which in this line is replaced by '..'
 
 // -------- calculations --------
 
-const rules = 'What is the result of the expression?';
+const rules = 'What number is missing in the progression?';
 
 const genRandNum = (max = 10, min = 1) => {
   const randNum = Math.random() * (max - min) + min;
