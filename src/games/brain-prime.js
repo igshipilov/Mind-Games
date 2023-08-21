@@ -1,39 +1,31 @@
-// -------- calculations --------
-
-const genRandNum = () => {
-  const digits = 10;
-  const randNum = Math.random() * digits;
-
-  return Math.floor(randNum);
-};
+import getRandomNum from "../utils.js";
+import startGame from "../index.js";
 
 const isPrime = (num) => {
   if (num < 2) {
-    return 'no';
+    return false;
   }
   if (num === 2 || num === 3) {
-    return 'yes';
+    return true;
   }
 
   const stop = num / 2;
 
   for (let i = 2; i <= stop; i += 1) {
     if (num % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
-
-// -----------------------------^
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const setQuestionAnswer = () => {
-  const question = genRandNum();
-  const answer = isPrime(question);
+const getQuestionAnswer = () => {
+  const question = getRandomNum();
+  const answer = isPrime(question) ? 'yes' : 'no';
 
   return [question, answer];
 };
 
-export { rules, setQuestionAnswer };
+export default () => { startGame(rules, getQuestionAnswer); };
