@@ -15,9 +15,11 @@ It represents five console games, eac assumes calculating mechanics.
 
 ### Install and launch: text instructions
 
-#### `git clone git@github.com:igshipilov/frontend-project-44.git`
-#### `cd frontend-project-44`
-#### `make install`
+```
+git clone git@github.com:igshipilov/frontend-project-44.git
+cd frontend-project-44
+make install
+```
 
 #### Games launch commands:
 `brain-games`
