@@ -1,3 +1,5 @@
 node_modules/
 test.js
 bin/brain-calc-old.js
+src/games/brain-progression-bckp.js
+src/games/brain-gcd-bckp.js

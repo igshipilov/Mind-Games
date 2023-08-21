@@ -1,8 +1,8 @@
 {
   "name": "@hexlet/code",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/igshipilov/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/igshipilov/frontend-project-44/actions)",
+  "description": "[![Actions Status](https://github.com/igshipilov/Simple-math-games--Study-project/workflows/hexlet-check/badge.svg)](https://github.com/igshipilov/Simple-math-games--Study-project/actions)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
