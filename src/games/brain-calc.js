@@ -1,5 +1,5 @@
-import getRandomNum from "../utils.js";
-import startGame from "../index.js";
+import getRandomNum from '../utils.js';
+import startGame from '../index.js';
 
 const operators = ['+', '-', '*'];
 

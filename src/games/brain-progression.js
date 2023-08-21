@@ -1,5 +1,5 @@
-import getRandomNum from "../utils.js";
-import startGame from "../index.js";
+import getRandomNum from '../utils.js';
+import startGame from '../index.js';
 
 const rules = 'What number is missing in the progression?';
 
@@ -12,7 +12,6 @@ const getProgressionLength = () => {
 };
 
 const getProgression = () => {
-
   const step = getRandomNum();
   const seqBegin = getRandomNum(100);
   const seqMaxLength = getProgressionLength();
@@ -29,7 +28,6 @@ const getProgression = () => {
 };
 
 const getQuestionAnswer = () => {
-
   const progression = getProgression();
   const hiddenNum = progression.length - 1;
 
