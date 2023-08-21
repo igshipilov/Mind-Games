@@ -40,9 +40,8 @@ const expressions = {
 };
 
 const getOperator = () => {
-  const operatorsQuantity = Object.keys(expressions).length;
-
-  const rand = (Math.random() * operatorsQuantity);
+  const operatorsQuantity = Object.keys(expressions).length - 1;
+  const rand = getRandomNum(operatorsQuantity);
   const result = Math.floor(rand);
 
   return operators[result];

@@ -45,22 +45,19 @@ which in this line is replaced by '..'
 
 const rules = 'What number is missing in the progression?';
 
-const genRandNum = (max = 10, min = 1) => {
-  const randNum = Math.random() * (max - min) + min;
-
-  return Math.floor(randNum);
-};
-
-// -----------------------------^
-
-const setQuestionAnswer = () => {
+const getProgressionLength = () => {
   const lengthMax = 10;
   const lengthMin = 5;
+  const seqMaxLength = getRandomNum(lengthMax, lengthMin);
 
-  const step = genRandNum(10);
-  const seqBegin = genRandNum(100);
-  const seqMaxLength = genRandNum(lengthMax, lengthMin);
-  const toHide = genRandNum(seqMaxLength - 1);
+  return seqMaxLength;
+};
+
+const getProgression = () => {
+
+  const step = getRandomNum();
+  const seqBegin = getRandomNum(100);
+  const seqMaxLength = getProgressionLength();
 
   const sequence = [];
   let currentElement = seqBegin;
